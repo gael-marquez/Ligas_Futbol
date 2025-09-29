@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Ligas_Futbol</string>
+    <string name="app_name">Ligas Fútbol</string>
+    <string name="back_button">Atrás</string>
+    <string name="leagues_title">Ligas de Fútbol</string>
+    <string name="teams_title">Equipos</string>
+    <string name="players_title">Jugadores</string>
 </resources>
