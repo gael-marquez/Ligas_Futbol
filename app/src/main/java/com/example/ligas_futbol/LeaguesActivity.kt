@@ -26,17 +26,9 @@ class LeaguesActivity : AppCompatActivity() {
         listView.adapter = adapter
 
         listView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
-            when (position) {
-                0 -> { // Premier League
-                    val intent = Intent(this, TeamsActivity::class.java)
-                    intent.putExtra("league", "Premier League")
-                    startActivity(intent)
-                }
-                // Por ahora solo implementamos Premier League
-                else -> {
-                    // Aquí puedes agregar las otras ligas después
-                }
-            }
+            val intent = Intent(this, TeamsActivity::class.java)
+            intent.putExtra("league", leagues[position]) // <-- Aquí el cambio
+            startActivity(intent)
         }
     }
 }
