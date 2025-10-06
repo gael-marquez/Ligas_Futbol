@@ -2,6 +2,7 @@ package com.example.ligas_futbol
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -74,5 +75,34 @@ class PlayersActivity : AppCompatActivity() {
         val listView = findViewById<ListView>(R.id.listview_players)
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, players)
         listView.adapter = adapter
+
+        // Mostrar imagen según el equipo
+        val teamPhoto = findViewById<ImageView>(R.id.team_photo)
+        val imageRes = when (teamName) {
+            // Premier League
+            "Manchester City" -> R.drawable.manchester_city
+            "Arsenal" -> R.drawable.arsenal
+            "Liverpool" -> R.drawable.liverpool
+            "Chelsea" -> R.drawable.chelsea
+            // La Liga
+            "Real Madrid" -> R.drawable.real_madrid
+            "Barcelona" -> R.drawable.barcelona
+            "Atlético Madrid" -> R.drawable.atletico_madrid
+            // Bundesliga
+            "Bayern Munich" -> R.drawable.bayern_munich
+            "Borussia Dortmund" -> R.drawable.borussiadortmund
+            "RB Leipzig" -> R.drawable.rbleipzig
+            // Serie A
+            "Inter Milan" -> R.drawable.inter
+            "Juventus" -> R.drawable.juventus
+            "AC Milan" -> R.drawable.acmilan
+            // Ligue 1
+            "Paris Saint-Germain" -> R.drawable.psg
+            "Lyon" -> R.drawable.lyon
+            "Marseille" -> R.drawable.marsella
+            // Otros equipos
+            else -> R.drawable.ic_launcher_foreground // Imagen default
+        }
+        teamPhoto.setImageResource(imageRes)
     }
 }
